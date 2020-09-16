@@ -1,0 +1,25 @@
+server.port: 8000
+---
+spring:
+   application:
+      name: spring-boot-admin-console
+---
+spring:
+   security:
+      user:
+         name: admin
+         password: admin@123
+---
+spring:
+   boot:
+      admin:
+         ui:
+            brand: <span>Boot Admin Console</span>
+            title: Boot Admin Console
+      client:
+         username: admin
+         password: admin@123
+         instance:
+            metadata:
+               user.name: admin
+               user.password: admin@123

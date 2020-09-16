@@ -1,0 +1,27 @@
+server:
+   port: 8888
+---
+spring:
+   application:
+      name: spring-cloud-config-server
+   main:
+      logStartupInfo: false
+   cloud:
+      config:
+         server:
+            git:
+               uri: file:///home/spaneos/git/configurations
+               search-paths: '{application}'
+---
+spring:
+   boot:
+      admin:
+         client:
+            password: admin@123
+            username: admin
+---
+management:
+   endpoints:
+      web:
+         exposure:
+            include: '*'

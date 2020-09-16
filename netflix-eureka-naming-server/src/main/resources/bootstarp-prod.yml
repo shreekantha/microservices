@@ -1,0 +1,24 @@
+server:
+   port: 8761
+---
+spring:
+   application:
+      name: netflix-eureka-naming-server
+---
+eureka:
+   client:
+      fetch-registry: false
+      register-with-eureka: false
+---
+spring:
+   boot:
+      admin:
+         client:
+            password: admin@123
+            username: admin
+---
+management:
+   endpoints:
+      web:
+         exposure:
+            include: '*'

@@ -1,0 +1,32 @@
+encrypt:
+   key: c5d292428b9282a72ce4c9b751db2da9d317bcfb728a94fe656da06d3fa2f4978057f98a421317f09cd1b51c0763ae0066788137ad3070d15d9c434b76055ff2
+---
+server:
+   port: 8888
+---
+spring:
+   application:
+      name: spring-cloud-config-server
+   main:
+      logStartupInfo: false
+   cloud:
+      config:
+         server:
+            git:
+               uri: https://github.com/shreekantha/configurations.git
+               username: '{cipher}03325ca4c87829c4f61479de773cbb9d10d48bc19f52b642144be0edc61c1e73'
+               password: '{cipher}72598c957098758206a71ca37e5d8ad5dc908590f393c8a58ce5e7a38d58a67f'
+               search-paths: '{application}'
+---
+spring:
+   boot:
+      admin:
+         client:
+            password: admin@123
+            username: admin
+---
+management:
+   endpoints:
+      web:
+         exposure:
+            include: '*'

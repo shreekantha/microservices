@@ -1,0 +1,33 @@
+server:
+   port: 8761
+---
+spring:
+   application:
+      name: netflix-eureka-naming-server
+---
+spring:
+   boot:
+      admin:
+         client:
+            password: admin@123
+            username: admin
+---
+eureka:
+   client:
+      fetch-registry: false
+      register-with-eureka: false
+      serviceUrl:
+         defaultZone: http://localhost:8761/eureka
+---
+spring:
+   boot:
+      admin:
+         client:
+            password: admin@123
+            username: admin
+---
+management:
+   endpoints:
+      web:
+         exposure:
+            include: '*'
